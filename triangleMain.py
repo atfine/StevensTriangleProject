@@ -33,17 +33,20 @@ def classifyTriangle(a,b,c):
     return invalid
   
   if (a == b or a == c or b == c):
-    if (side[0]**2 + side[1]**2 == side[2]**2):
+    if isclose(side[0]**2 + side[1]**2, side[2]**2):
       return rightIsoceles
     else:
       return isoceles
 
   
-  if (side[0]**2 + side[1]**2 == side[2]**2):
+  if isclose(side[0]**2 + side[1]**2, side[2]**2):
     return right
   else:
     return scalene
 
+
+def isclose(a, b, rel_tol=1e-09, abs_tol=0.0):
+  return abs(a-b) <= max(rel_tol * max(abs(a), abs(b)), abs_tol)
 
 if __name__ == '__main__':
   main()

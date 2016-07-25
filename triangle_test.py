@@ -22,7 +22,7 @@ class TestClassifyTriangle(unittest.TestCase):
   def test_Exercise2_LML(self):
     self.assertEquals(classifyTriangle(1, 1, 2), invalid)
     self.assertEquals(classifyTriangle(1234567890, 1234567890, 1745942654), right_isoceles)
-    self.assertEquals(classifyTriangle(1, 1, 1.99), right_isoceles)
+    self.assertEquals(classifyTriangle(1, 1, 1.99), isoceles)
   
   def test_Exercise2_Group1(self):
     self.assertEquals(classifyTriangle(-1, -1, -1), invalid)

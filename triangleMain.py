@@ -27,3 +27,7 @@ def classifyTriangle(a,b,c):
     theType = isocelesType
   else:
   	theType = scaleneType
+
+class MyTest(unittest.TestCase):
+    def test(self):
+        self.assertEqual(classifyTriangle(3,3,4), 4)

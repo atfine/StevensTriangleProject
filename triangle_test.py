@@ -18,8 +18,8 @@ invalid     = 'Invalid'
 class TestClassifyTriangle(unittest.TestCase):
   def test_classification(self):
     self.assertEquals(classifyTriangle(5, 5, 5), equilateral)
-    self.assertEquals(classifyTriangle(1, 2, 1), isoceles)
-    self.assertEquals(classifyTriangle(1, 3, 5), scalene)
+    self.assertEquals(classifyTriangle(2, 3, 2), isoceles)
+    self.assertEquals(classifyTriangle(4, 3, 6), scalene)
     self.assertEquals(classifyTriangle(3, 4, 5), right)
 
   def test_data_types(self):
@@ -31,7 +31,7 @@ class TestClassifyTriangle(unittest.TestCase):
   def test_range(self):
     self.assertEqual(classifyTriangle(0, 1, 2),                   invalid)
     self.assertEqual(classifyTriangle(1, 2, -3),                  invalid)
-    self.assertEqual(classifyTriangle(0.0001, 0.00001, 0.000001), scalene)
+    self.assertEqual(classifyTriangle(0.0001, 0.0002, 0.0003), scalene)
     self.assertEqual(classifyTriangle(10, 999999, 999999),        isoceles)
     self.assertEqual(classifyTriangle(3000000, 4000000, 5000000), right)
 

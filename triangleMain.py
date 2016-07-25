@@ -16,40 +16,23 @@ def main():
     rawc = raw_input ("Parameter C: ")
   
     triangleType = classifyTriangle(rawa,rawb,rawc)
-  
-    if (triangleType == isocelesType):
-      print "Isoceles!"
-    elif (triangleType == scaleneType):
-      print "Scalene!"
-    elif (triangleType == equilateralType):
-      print "Equilateral!"
-    else:
-      print "Invalid Triangle!"
+    print triangleType
       
   else:
     unittest.main()
   
   
 def classifyTriangle(a,b,c):
-  
   # Check for valid numeric entries
   try:
     a = float (a)
-  except:
-    a = 0.0
-    
-  try:
     b = float (b)
-  except:
-    b = 0.0
-    
-  try:
     c = float (c)
   except:
-    c = 0.0
-    
-  if (a == 0.0 or b == 0.0 or c == 0.0):
-    theType = invalidType
+    return invalidType
+
+  if (a <= 0 or b <= 0 or c <= 0):
+    return invalidType
   else:
     if (a == b and b == c):
       theType = equilateralType

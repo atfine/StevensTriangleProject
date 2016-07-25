@@ -55,7 +55,14 @@ def classifyTriangle(a,b,c):
   return theType
 
 class TestTriangleClassifications(unittest.TestCase):
-    def test(self):
+    
+    def test_equilateral(self):
         self.assertEqual(classifyTriangle(3,3,3), equilateralType)
+    
+    def test_isoceles(self):
+        self.assertEqual(classifyTriangle(3,3,4), isocelesType)
+    
+    def test_scalene(self):
+        self.assertEqual(classifyTriangle(3,4,5), scaleneType)
   
 main()

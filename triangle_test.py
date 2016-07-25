@@ -1,3 +1,4 @@
+import math
 import unittest
 import math
 import triangleMain
@@ -18,6 +19,43 @@ invalid        = 'Invalid'
 # argument order
 
 class TestClassifyTriangle(unittest.TestCase):
+  
+  def test_Exercise2_LML(self):
+    self.assertEquals(classifyTriangle(1, 1, 2), invalid)
+    self.assertEquals(classifyTriangle(1234567890, 1234567890, 1745942654), right)
+    self.assertEquals(classifyTriangle(1, 1, 1.99), right)
+  
+  def test_Exercise2_Group1(self):
+    self.assertEquals(classifyTriangle(-1, -1, -1), invalid)
+    self.assertEquals(classifyTriangle(1, 'a', 1), invalid)
+    self.assertEquals(classifyTriangle(.1, .1, .1), equilateral)
+  
+  def test_Exercise2_Group2(self):
+    self.assertEquals(classifyTriangle(1, 1, math.sqrt(2), right)
+    self.assertEquals(classifyTriangle(3, 4, 5), invalid)
+    self.assertEquals(classifyTriangle(4.0, 4, 2 ** 2), equilateral)
+  
+  def test_Exercise2_Group3(self):
+    self.assertEquals(classifyTriangle('A', 'A', 'A', invalid)
+    self.assertEquals(classifyTriangle(7, 3, 2), invalid)
+    self.assertEquals(classifyTriangle(-3, -4, -5), invalid)
+  
+  def test_Exercise2_Group4(self):
+    self.assertEquals(classifyTriangle(0, 1, 2, invalid)
+    self.assertEquals(classifyTriangle(1, 1, -3), invalid)
+    self.assertEquals(classifyTriangle(10, 99999, 99999), isoceles)
+  
+  def test_Exercise2_Group5(self):
+    self.assertEquals(classifyTriangle(-3, -4, -5, invalid)
+    self.assertEquals(classifyTriangle(3* 2 ** 64, 4* 2 ** 64, 4* 2 ** 64), right)
+    self.assertEquals(classifyTriangle(3, 3, 4.2426406871192851464050661726291), isoceles)
+  
+  def test_Exercise2_Group6(self):
+    self.assertEquals(classifyTriangle(5, 4, 3, isoceles)
+    self.assertEquals(classifyTriangle(3, 10, 4), invalid)
+    self.assertEquals(classifyTriangle(1.5, 1.5, 1.5), equilateral)
+    self.assertEquals(classifyTriangle(1234567890, 1234567890, 1745942654), isoceles)
+  
   def test_classification(self):
     self.assertEquals(classifyTriangle(5, 5, 5), equilateral)
     self.assertEquals(classifyTriangle(2, 3, 2), isoceles)

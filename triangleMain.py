@@ -11,6 +11,21 @@ def main():
   rawb = raw_input ("Parameter B: ")
   rawc = raw_input ("Parameter C: ")
   
+  triangleType = classifyTriangle(rawa,rawb,rawc)
+  
+  if (triangleType == isocelesType):
+    print "Isoceles!"
+  elif (triangleType == scaleneType):
+    print "Scalene!"
+  elif (triangleType == equilateralType):
+    print "Equilateral!"
+  else:
+    print "Invalid Triangle!"
+  
+  
+def classifyTriangle(a,b,c):
+  
+  # Check for valid numeric entries
   try:
     a = float (rawa)
   except:
@@ -25,23 +40,7 @@ def main():
     c = float (rawc)
   except:
     c = 0.0
-  
-  triangleType = classifyTriangle(a,b,c)
-  
-  if (triangleType == isocelesType):
-    print "Isoceles!"
-  elif (triangleType == scaleneType):
-    print "Scalene!"
-  elif (triangleType == equilateralType):
-    print "Equilateral!"
-  else:
-    print "Invalid Triangle!"
-  
-  
-def classifyTriangle(a,b,c):
-  
-  validTriangle = False
-  #add checks for valid numeric entries, non-zero
+    
   if (a == 0.0 or b == 0.0 or c == 0.0):
     theType = invalidType
   else:

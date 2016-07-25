@@ -7,37 +7,45 @@ equilateralType = "Equilateral"
 invalidType = "Invalid"
 
 def main():
-  rawa = raw_input ("Parameter A: ")
-  rawb = raw_input ("Parameter B: ")
-  rawc = raw_input ("Parameter C: ")
+	
+  runTests = raw_input ("Run tests (R) or Manual (M): ")
+	
+  if (runTests == "M"):
+    rawa = raw_input ("Parameter A: ")
+    rawb = raw_input ("Parameter B: ")
+    rawc = raw_input ("Parameter C: ")
   
-  triangleType = classifyTriangle(rawa,rawb,rawc)
+    triangleType = classifyTriangle(rawa,rawb,rawc)
   
-  if (triangleType == isocelesType):
-    print "Isoceles!"
-  elif (triangleType == scaleneType):
-    print "Scalene!"
-  elif (triangleType == equilateralType):
-    print "Equilateral!"
+    if (triangleType == isocelesType):
+      print "Isoceles!"
+    elif (triangleType == scaleneType):
+      print "Scalene!"
+    elif (triangleType == equilateralType):
+      print "Equilateral!"
+    else:
+      print "Invalid Triangle!"
+      
   else:
-    print "Invalid Triangle!"
+    
+    print "Run units tests...Chris"
   
   
 def classifyTriangle(a,b,c):
   
   # Check for valid numeric entries
   try:
-    a = float (rawa)
+    a = float (a)
   except:
     a = 0.0
     
   try:
-    b = float (rawb)
+    b = float (b)
   except:
     b = 0.0
     
   try:
-    c = float (rawc)
+    c = float (c)
   except:
     c = 0.0
     

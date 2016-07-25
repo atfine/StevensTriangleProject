@@ -1,6 +1,7 @@
 # Main file for Triangle project
 equilateral = "Equilateral"
 isoceles    = "Isoceles"
+rightIsoceles    = "Right Isoceles"
 scalene     = "Scalene"
 right       = "Right Scalene"
 invalid     = "Invalid"
@@ -26,11 +27,18 @@ def classifyTriangle(a,b,c):
 
   if (a == b and b == c):
     return equilateral
-
-  if (a == b or a == c or b == c):
-    return isoceles
-
   side = sorted([a, b, c])
+  
+  if (side[2] >= side[0] + side[1]):
+    return invalid
+  
+  if (a == b or a == c or b == c):
+    if (side[0]**2 + side[1]**2 == side[2]**2):
+      return rightIsoceles
+    else:
+      return isoceles
+
+  
   if (side[0]**2 + side[1]**2 == side[2]**2):
     return right
   else:

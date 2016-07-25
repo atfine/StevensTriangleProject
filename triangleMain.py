@@ -64,5 +64,7 @@ class TestTriangleClassifications(unittest.TestCase):
     
     def test_scalene(self):
         self.assertEqual(classifyTriangle(3,4,5), scaleneType)
-  
-main()
+
+if __name__ == '__main__':
+    unittest.main()
+#main()

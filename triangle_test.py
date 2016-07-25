@@ -28,13 +28,13 @@ class TestClassifyTriangle(unittest.TestCase):
     self.assertEquals(classifyTriangle(-1, -1, -1), invalid)
     self.assertEquals(classifyTriangle(1, 'a', 1), invalid)
     self.assertEquals(classifyTriangle(.1, .1, .1), equilateral)
-    self.assertEquals(classifyTriangle(-1, -1, -1), equilateral)
+    self.assertEquals(classifyTriangle(-1, -1, -1), invalid)
     #self.assertEquals(classifyTriangle(1e0, 1e0, 1e0), equilateral)
     self.assertEquals(classifyTriangle(3, 3, 5.9999999999999999), equilateral)
   
   def test_Exercise2_Group2(self):
     self.assertEquals(classifyTriangle(1, 1, math.sqrt(2)), right_isoceles)
-    self.assertEquals(classifyTriangle(3, 4, 5), invalid)
+    self.assertEquals(classifyTriangle(3, 4, 5), right_scalene)
     self.assertEquals(classifyTriangle(4.0, 4, 2 ** 2), equilateral)
   
   def test_Exercise2_Group3(self):
@@ -43,7 +43,7 @@ class TestClassifyTriangle(unittest.TestCase):
     self.assertEquals(classifyTriangle(-3, -4, -5), invalid)
   
   def test_Exercise2_Group4(self):
-    self.assertEquals(classifyTriangle(0, 1, 2, invalid))
+    self.assertEquals(classifyTriangle(0, 1, 2), invalid)
     self.assertEquals(classifyTriangle(1, 1, -3), invalid)
     self.assertEquals(classifyTriangle(10, 99999, 99999), isoceles)
     self.assertEquals(classifyTriangle(3E15, 4E15, 5E15), right_scalene)

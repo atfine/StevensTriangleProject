@@ -1,4 +1,5 @@
 # Main file for Triangle project
+import unittest
 
 isocelesType = "Isoceles"
 scaleneType = "Scalene"

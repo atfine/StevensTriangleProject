@@ -38,3 +38,6 @@ def classifyTriangle(a,b,c):
   	theType = scaleneType
   	
   return theType
+  
+  
+main()

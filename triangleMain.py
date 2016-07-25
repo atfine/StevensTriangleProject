@@ -41,7 +41,7 @@ def classifyTriangle(a,b,c):
 
 class MyTest(unittest.TestCase):
     def test(self):
-        self.assertEqual(classifyTriangle(3,3,4), 4)
+        self.assertEqual(classifyTriangle(3,3,3), equilateralType)
   
 main()
 >>>>>>> origin/master

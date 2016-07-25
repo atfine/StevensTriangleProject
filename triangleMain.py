@@ -3,6 +3,7 @@ import unittest
 
 isocelesType = "Isoceles"
 scaleneType = "Scalene"
+rightScalene = "Right Scalene"
 equilateralType = "Equilateral"
 invalidType = "Invalid"
 
@@ -51,7 +52,10 @@ class TestTriangleClassifications(unittest.TestCase):
     self.assertEqual(classifyTriangle(3,3,4), isocelesType)
 
   def test_scalene(self):
-    self.assertEqual(classifyTriangle(3,4,5), scaleneType)
+    self.assertEqual(classifyTriangle(1,3,5), scaleneType)
+
+  def test_right(self):
+    self.assertEqual(classifyTriangle(3,4,5), rightScalene)
 
   def test_negative_length(self):
     self.assertEqual(classifyTriangle(1,2,-3), invalidType)

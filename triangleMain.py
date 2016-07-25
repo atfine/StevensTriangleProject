@@ -5,9 +5,9 @@ isocelesType = "Isoceles"
 scaleneType = "Scalene"
 equilateralType = "Equilateral"
 
-def main:
+def main():
   print "Parameter a = 3"
-  a = 5
+  a = 3
   print "Parameter b = 4"
   b = 4
   print "Parameter c = 5"
@@ -15,19 +15,33 @@ def main:
   
   triangleType = classifyTriangle(a,b,c)
   
+  if (triangleType == isocelesType):
+    print "Isoceles!"
+  elif (triangleType == scaleneType):
+    print "Scalene!"
+  elif (triangleType == equilateralType):
+    print "Equilateral!"
+  else:
+    print "Invalid Triangle!"
   
   
 def classifyTriangle(a,b,c):
   
   validTriangle = False
+  #add checks for valid numeric entries, non-zero
   
   if (a == b & b == c):
     theType = equilateralType
-  elif (a == b | a == c | b == c)
+  elif (a == b | a == c | b == c):
     theType = isocelesType
   else:
   	theType = scaleneType
+  	
+  return theType
 
 class MyTest(unittest.TestCase):
     def test(self):
         self.assertEqual(classifyTriangle(3,3,4), 4)
+  
+main()
+>>>>>>> origin/master

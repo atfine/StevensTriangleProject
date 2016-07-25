@@ -27,8 +27,7 @@ def main():
       print "Invalid Triangle!"
       
   else:
-    
-    print "Run units tests...Chris"
+    unittest.main()
   
   
 def classifyTriangle(a,b,c):
@@ -72,6 +71,5 @@ class TestTriangleClassifications(unittest.TestCase):
     def test_scalene(self):
         self.assertEqual(classifyTriangle(3,4,5), scaleneType)
 
-if __name__ == '__main__':
-    unittest.main()
-#main()
+
+main()

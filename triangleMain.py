@@ -39,7 +39,7 @@ def classifyTriangle(a,b,c):
   	
   return theType
 
-class MyTest(unittest.TestCase):
+class TestTriangleClassifications(unittest.TestCase):
     def test(self):
         self.assertEqual(classifyTriangle(3,3,3), equilateralType)
   

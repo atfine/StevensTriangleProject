@@ -33,26 +33,27 @@ def classifyTriangle(a,b,c):
 
   if (a <= 0 or b <= 0 or c <= 0):
     return invalidType
+
+  if (a == b and b == c):
+    theType = equilateralType
+  elif (a == b or a == c or b == c):
+    theType = isocelesType
   else:
-    if (a == b and b == c):
-      theType = equilateralType
-    elif (a == b or a == c or b == c):
-      theType = isocelesType
-    else:
-  	  theType = scaleneType
-  	
+    theType = scaleneType
+  
   return theType
 
 class TestTriangleClassifications(unittest.TestCase):
-    
-    def test_equilateral(self):
-        self.assertEqual(classifyTriangle(3,3,3), equilateralType)
-    
-    def test_isoceles(self):
-        self.assertEqual(classifyTriangle(3,3,4), isocelesType)
-    
-    def test_scalene(self):
-        self.assertEqual(classifyTriangle(3,4,5), scaleneType)
+  def test_equilateral(self):
+    self.assertEqual(classifyTriangle(3,3,3), equilateralType)
 
+  def test_isoceles(self):
+    self.assertEqual(classifyTriangle(3,3,4), isocelesType)
+
+  def test_scalene(self):
+    self.assertEqual(classifyTriangle(3,4,5), scaleneType)
+
+  def test_negative_length(self):
+    self.assertEqual(classifyTriangle(1,2,-3), invalidType)
 
 main()

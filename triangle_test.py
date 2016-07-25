@@ -21,6 +21,9 @@ class TestClassifyTriangle(unittest.TestCase):
   def test_right(self):
     self.assertEqual(classifyTriangle(3,4,5), right)
 
+  def test_right2(self):
+    self.assertEqual(classifyTriangle(5,3,4), right)
+
   def test_nonnumber(self):
     self.assertEqual(classifyTriangle(5,'b',7), invalid)
 

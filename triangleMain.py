@@ -1,15 +1,15 @@
 # Main file for Triangle project
-isocelesType = "Isoceles"
-scaleneType = "Scalene"
-rightScalene = "Right Scalene"
-equilateralType = "Equilateral"
-invalidType = "Invalid"
+equilateral = "Equilateral"
+isoceles    = "Isoceles"
+scalene     = "Scalene"
+right       = "Right Scalene"
+invalid     = "Invalid"
 
 def main():
-  rawa = raw_input ("Parameter A: ")
-  rawb = raw_input ("Parameter B: ")
-  rawc = raw_input ("Parameter C: ")
-  print classifyTriangle(rawa,rawb,rawc)
+  a = raw_input ("Parameter A: ")
+  b = raw_input ("Parameter B: ")
+  c = raw_input ("Parameter C: ")
+  print classifyTriangle(a,b,c)
 
 
 def classifyTriangle(a,b,c):
@@ -19,19 +19,23 @@ def classifyTriangle(a,b,c):
     b = float (b)
     c = float (c)
   except:
-    return invalidType
+    return invalid
 
   if (a <= 0 or b <= 0 or c <= 0):
-    return invalidType
+    return invalid
 
   if (a == b and b == c):
-    theType = equilateralType
-  elif (a == b or a == c or b == c):
-    theType = isocelesType
+    return equilateral
+
+  if (a == b or a == c or b == c):
+    return isoceles
+
+  side = sorted([a, b, c])
+  if (side[0]**2 + side[1]**2 == side[2]**2):
+    return right
   else:
-    theType = scaleneType
-  
-  return theType
+    return scalene
+
 
 if __name__ == '__main__':
   main()

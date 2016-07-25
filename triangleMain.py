@@ -44,4 +44,3 @@ class MyTest(unittest.TestCase):
         self.assertEqual(classifyTriangle(3,3,3), equilateralType)
   
 main()
->>>>>>> origin/master

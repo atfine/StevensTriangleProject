@@ -4,14 +4,27 @@ import unittest
 isocelesType = "Isoceles"
 scaleneType = "Scalene"
 equilateralType = "Equilateral"
+invalidType = "Invalid"
 
 def main():
-  print "Parameter a = 3"
-  a = 3
-  print "Parameter b = 4"
-  b = 4
-  print "Parameter c = 5"
-  c = 5
+  rawa = raw_input ("Parameter A: ")
+  rawb = raw_input ("Parameter B: ")
+  rawc = raw_input ("Parameter C: ")
+  
+  try:
+    a = float (rawa)
+  except:
+    a = 0.0
+    
+  try:
+    b = float (rawb)
+  except:
+    b = 0.0
+    
+  try:
+    c = float (rawc)
+  except:
+    c = 0.0
   
   triangleType = classifyTriangle(a,b,c)
   
@@ -29,13 +42,15 @@ def classifyTriangle(a,b,c):
   
   validTriangle = False
   #add checks for valid numeric entries, non-zero
-  
-  if (a == b & b == c):
-    theType = equilateralType
-  elif (a == b | a == c | b == c):
-    theType = isocelesType
+  if (a == 0.0 or b == 0.0 or c == 0.0):
+    theType = invalidType
   else:
-  	theType = scaleneType
+    if (a == b and b == c):
+      theType = equilateralType
+    elif (a == b or a == c or b == c):
+      theType = isocelesType
+    else:
+  	  theType = scaleneType
   	
   return theType
 
